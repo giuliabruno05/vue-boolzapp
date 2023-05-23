@@ -16,16 +16,72 @@
     <div id="app" class="container">
         <div class="contatti">
             <div class="row-utente">
-                <i class="fa-solid fa-circle-notch"></i>
-                <i class="fa-solid fa-message"></i>
-                <i class="fa-solid fa-ellipsis-vertical"></i>
+                <div class="block-utente">
+                    <div class="avatar">
+                        <img src="img/avatar_6.png " class="avatar" alt="">
+                    </div>
+                    <div class="details-avatar">
+                        <span class="nomi-utente">Sofia</span>
+                        
+                    </div>
+                </div>
+                <div class="icons">
+                    <i class="fa-solid fa-circle-notch"></i>
+                    <i class="fa-solid fa-message"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+               
+            </div>
+            <div class="alert">
+                <div><i class="fa-solid fa-bell-slash avatar"></i></div>
+                <div>
+                    <span>Ricevi notifiche di nuovi messaggi</span>
+                    <br>
+                    <a href="">Attiva notifiche desktop</a>
+                </div>
+                
+            </div>
+            <div class="search-chat">
+                
+                <div class="search-bar">
+                    <button class="cerca"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input class="search" type="text" placeholder="Cerca o inizia una nuova chat" >
+                </div>
+            </div>
+            <div>
+                <div class="rubrica"v-for="(chat, index) in contacts">
+                    <div class="block-utente">
+                        
+                            <img :src="chat.avatar" class="avatar"  alt="" >
+                        
+                        <div class="details-avatar">
+                            <span class="nomi-utente">{{chat.name}}</span><br>
+                            
+                            <span class="ultimo-accesso">Ultimo messaggio inviato</span>
+                        </div>
+                        
+                    </div>
+                </div>
+                
             </div>
         </div>
         <div class="chat">
             <div class="row-chat">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <i class="fa-solid fa-paperclip"></i>
-                <i class="fa-solid fa-ellipsis-vertical"></i>
+                <div class="block-utente">
+                    <div class="avatar">
+                        <img src="img/avatar_1.png" class="avatar" alt="">
+                    </div>
+                    <div class="details-avatar">
+                        <span class="nomi-utente">Michele</span><br>
+                        <span class="ultimo-accesso">Ultimo accesso oggi alle 12:00</span>
+                    </div>
+                </div>
+                <div class="icons">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-paperclip"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                    
+                </div>
             </div>
         </div>
     </div>

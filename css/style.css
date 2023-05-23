@@ -25,25 +25,106 @@ header{
    
 }
 .contatti {
-    border: 2px solid black;
+    border: 1px solid #aeafb3;
     min-width: 30%;
+    background-color:#ffffff;
+}
+.avatar{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    
 }
 .chat{
-    border: 2px solid black;
+    border: 1px solid #aeafb3;
     min-width: 70%;
     background-image:url(../img/sfondo\ whatsapp.png);
+    border-left: hidden;
 }
 .row-chat, .row-utente{
-    height: 50px;
+    height: 60px;
     background-color:#eaeaea;
 }
 
 .row-chat, .row-utente{
     display: flex;
-    justify-content:end;
     gap: 10px;
     align-items: center;
-    padding-right:10px;
+    padding:10px;
     color: #aeafb3;
+    justify-content:space-between;
+}
+.ultimo-accesso{
+    color: #aeafb3;
+    font-size: 0.8rem;
+}
+ .block-utente{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    
+} 
+/* struttura contatti */
+i{
+    margin:5px;
 }
 
+.alert{
+    height: 60px;
+    background-color:#8ad3f1;
+    display: flex;
+    padding: 10px;
+    font-size: 0.9rem;
+    align-items: center;
+}
+.fa-bell-slash{
+    text-align: center;
+    line-height: 40px;
+    vertical-align: middle;
+    background-color: #ffffff;
+    color: #8ad3f1;
+}
+a{
+    color:gray;
+
+}
+.search-chat{
+    height: 40px;
+    background-color:#eaeaea;
+    
+}
+.search-chat > div{
+    padding-top: 5px;
+}
+
+.search{
+    width:80%;
+    padding: 5px;
+    height: 30px;
+    margin-left: -4px;
+    border: hidden;
+    border: 1px solid #eaeaea;
+    
+}
+
+.cerca{
+    height: 30px; 
+    border: 1px solid #eaeaea;
+    width: 15%;
+    border-right: hidden;
+    margin-left: 6px;
+    background-color: #fff;
+}
+/* dettagli struttura contatti chat */
+.rubrica{
+    height: 50px;
+    background-color:#fff;
+    display: flex;
+    border-bottom: 1px solid #eaeaea;
+    padding: 5px;
+    gap: 5px;
+    
+}
+.nomi-utente{
+    color: black;
+}
