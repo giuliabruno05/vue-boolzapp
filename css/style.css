@@ -128,3 +128,7 @@ a{
 .nomi-utente{
     color: black;
 }
+.list-chat{
+    overflow: auto;
+    height: calc(100% - 160px);
+}
