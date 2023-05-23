@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #d8dbd2;
+}
+header{
+    height: 80px;
+    position: relative;
+    background-color: #009688;
+    
+}
+
+.container{
+    
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 80%;
+    display: flex;
+    height: 90vh;
+   
+}
+.contatti {
+    border: 2px solid black;
+    min-width: 30%;
+}
+.chat{
+    border: 2px solid black;
+    min-width: 70%;
+    background-image:url(../img/sfondo\ whatsapp.png);
+}
+.row-chat, .row-utente{
+    height: 50px;
+    background-color:#eaeaea;
+}
+
+.row-chat, .row-utente{
+    display: flex;
+    justify-content:end;
+    gap: 10px;
+    align-items: center;
+    padding-right:10px;
+    color: #aeafb3;
+}
+
