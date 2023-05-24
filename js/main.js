@@ -165,16 +165,30 @@ createApp({
                         }
                     ],
                 }
-            ]
-            
+            ],
+            textMessage : "" 
         }
 
     },
     methods:{
         swipeChat(indice){
             this.indiceContatti = indice;
+        },
+      
+        addMessage(){
+            const  newMessage = {
+                    date:'10/01/2020 15:51:00',                 
+                    message:this.textMessage ,
+                    status: 'sent'
+                }
+                    
+                if(newMessage.message !== ""){
+                    this.contacts[this.indiceContatti].messages.push(newMessage)
+                }    
+                this.textMessage = "" 
+            }
         }
-        }
+}) .mount("#app")      
+        
     
 
-}) .mount("#app")

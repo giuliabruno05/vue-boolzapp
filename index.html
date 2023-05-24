@@ -87,17 +87,18 @@
             </div>
             <div class="container-message">
 
-                <div class="sms" v-for="(messaggi, index) in contacts[indiceContatti].messages">
-                    <span>
+                <div class="sms"  v-for="(messaggi, index) in contacts[indiceContatti].messages" :class="messaggi.status === 'sent' ? 'green' : 'white'">
+                    
+                   
                         {{messaggi.message}}
-                    </span>
+                   
                 </div>
             </div>
             <div class="row-bottom">
                 <a href="">
                     <i class="fa-regular fa-face-smile"></i>
                 </a>
-                <input class="write-message" type="text" placeholder="Scrivi un messaggio" >
+                <input class="write-message" type="text" placeholder="Scrivi un messaggio"v-model="textMessage" @keyup.enter="addMessage" >
                 <a href="">
                     <i class="fa-solid fa-microphone"></i>
                 </a>

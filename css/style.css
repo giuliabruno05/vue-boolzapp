@@ -140,6 +140,9 @@ a{
 .container-message{
     height: calc(100% - 110px);
     overflow: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px;
 }
 .row-bottom{
     height: 50px;
@@ -148,6 +151,7 @@ a{
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+
   
 }
 /* sezione ricerca messaggio  */
@@ -165,5 +169,20 @@ a{
 }
 /* sezione messaggi */
 .sms{
-    color: #009688;
+    padding: 10px;
+    border-radius: 8px;
+    min-width: 40px;
+    min-height: 30px;
+    margin-bottom: 10px;
+    
+}
+.green{
+    background-color: #d5f9ba;
+    align-self:flex-end;
+    
+
+}
+.white{
+    background-color: #fff;
+    align-self:flex-start;
 }
