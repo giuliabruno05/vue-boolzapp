@@ -106,6 +106,7 @@ a{
     margin-left: -4px;
     border: hidden;
     border: 1px solid #eaeaea;
+    font-size: 0.7rem;
 
 }
 
@@ -116,6 +117,7 @@ a{
     border-right: hidden;
     margin-left: 6px;
     background-color: #fff;
+    
 }
 /* dettagli struttura contatti chat */
 .rubrica{
@@ -135,8 +137,9 @@ a{
     height: calc(100% - 160px);
 }
 /* sezione row invio */
-.message{
+.container-message{
     height: calc(100% - 110px);
+    overflow: auto;
 }
 .row-bottom{
     height: 50px;
@@ -146,4 +149,21 @@ a{
     align-items: center;
     padding: 10px;
   
+}
+/* sezione ricerca messaggio  */
+.write-message{
+    width: 80%;
+    padding: 9px;
+    border-radius: 3px;
+    border: hidden;
+    font-size: 0.7rem;
+    margin-left: 5px;
+}
+
+.row-bottom i{
+    margin: 0 10px;
+}
+/* sezione messaggi */
+.sms{
+    color: #009688;
 }

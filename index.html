@@ -50,7 +50,7 @@
             </div>
             <!-- struttura chat -->
             <div class="list-chat">
-                <div class="rubrica"v-for="(chat, index) in contacts">
+                <div class="rubrica"v-for="(chat, index) in contacts" @click="swipeChat(index)">
                     <div class="block-utente">
                         
                             <img :src="chat.avatar" class="avatar"  alt="" >
@@ -70,10 +70,11 @@
             <div class="row-chat">
                 <div class="block-utente">
                     <div class="avatar">
-                        <img src="img/avatar_1.png" class="avatar" alt="">
+                        <img :src="contacts[indiceContatti].avatar" class="avatar" alt="">
                     </div>
                     <div class="details-avatar">
-                        <span class="nomi-utente">Michele</span><br>
+                        <span class="nomi-utente">{{contacts[indiceContatti].name}}</span><br>
+                       
                         <span class="ultimo-accesso">Ultimo accesso oggi alle 12:00</span>
                     </div>
                 </div>
@@ -84,13 +85,19 @@
                     
                 </div>
             </div>
-            <div class="message">
+            <div class="container-message">
 
+                <div class="sms" v-for="(messaggi, index) in contacts[indiceContatti].messages">
+                    <span>
+                        {{messaggi.message}}
+                    </span>
+                </div>
             </div>
             <div class="row-bottom">
                 <a href="">
                     <i class="fa-regular fa-face-smile"></i>
                 </a>
+                <input class="write-message" type="text" placeholder="Scrivi un messaggio" >
                 <a href="">
                     <i class="fa-solid fa-microphone"></i>
                 </a>

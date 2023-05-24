@@ -2,6 +2,7 @@ const {createApp} = Vue ;
 createApp({
     data(){
         return{
+            indiceContatti:0,
             contacts: [
                 {
                     name: 'Michele',
@@ -167,5 +168,13 @@ createApp({
             ]
             
         }
-    }
+
+    },
+    methods:{
+        swipeChat(indice){
+            this.indiceContatti = indice;
+        }
+        }
+    
+
 }) .mount("#app")
