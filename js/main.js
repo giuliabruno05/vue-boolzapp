@@ -184,10 +184,22 @@ createApp({
                     
                 if(newMessage.message !== ""){
                     this.contacts[this.indiceContatti].messages.push(newMessage)
-                }    
-                this.textMessage = "" 
-            }
+                } 
+                
+                setTimeout(() => {
+                    const  automaticMessage = {
+                          
+                        date:'10/01/2020 15:51:00',                 
+                        message:'ok',
+                        status: 'received'
+                    }
+                    this.contacts[this.indiceContatti].messages.push(automaticMessage)
+                }, 1000);  
         }
+        
+    }
+   
+        
 }) .mount("#app")      
         
     
