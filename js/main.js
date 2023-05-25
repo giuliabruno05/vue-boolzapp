@@ -2,6 +2,7 @@ const {createApp} = Vue ;
 createApp({
     data(){
         return{
+            
             indiceContatti:0,
             contacts: [
                 {
@@ -195,6 +196,10 @@ createApp({
                     }
                     this.contacts[this.indiceContatti].messages.push(automaticMessage)
                 }, 1000);  
+        },
+        cancellaMessaggio(indice){
+            this.contacts[this.indiceContatti].messages.splice(indice, 1)
+            
         }
         
     }
