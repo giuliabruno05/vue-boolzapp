@@ -94,6 +94,7 @@ a{
 /* dettagli sezione ricerca contatti */
 .fa-magnifying-glass{
     color: #aeafb3;
+    font-size: 0.8rem;
 }
 .search-chat{
     height: 40px;
@@ -122,6 +123,7 @@ a{
     border-right: hidden;
     margin-left: 6px;
     background-color: #fff;
+    padding-top: -10px;
     
 }
 /* dettagli struttura contatti chat */
@@ -132,6 +134,7 @@ a{
     border-bottom: 1px solid #eaeaea;
     padding: 5px;
     gap: 5px;
+    position: relative;
 
 }
 .nomi-utente{
@@ -140,6 +143,14 @@ a{
 .list-chat{
     overflow: auto;
     height: calc(100% - 160px);
+}
+.orario{
+    font-size: 0.7rem;
+    color:#aeafb3;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
 }
 /* sezione row invio */
 .container-message{
@@ -198,11 +209,13 @@ a{
     position: absolute;
     top: 40px;
     left: 20px;
+    border: hidden;
+    z-index: 1000;
 } 
 option{
     background-color: #fff;
     padding: 10px;
-    border:none;
+    
 }
 .show {
     display:block;

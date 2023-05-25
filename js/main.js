@@ -2,8 +2,19 @@ const {createApp} = Vue ;
 createApp({
     data(){
         return{
+            frasi :[
+                
+                'La logica ti porta da A a B, l’immaginazione ti porta ovunque',
+                'Gli occhi sono lo specchio dell’anima… cela i tuoi se non vuoi che ne scopra i segreti.',
+                'Imparerai a tue spese che nel lungo tragitto della vita incontrerai tante maschere e pochi volti.',
+                'Noi sanciamo le Irlande irrilevanti ogni qual volta che Nora quadra la mancanza usabile.',
+                "Il campo è l'evidente medico dei larghi determinabili ed è così anche se non sei d'accordo",
+                "Il destino è tra gli esempi splenici di un' enciclopedia semitrasparente ed è un prepotente dato di fatto."
+            ],
+            ora :new Date(Date.now()).toLocaleTimeString(),
             ricercaUtenti:"",
             dropMenu: "",
+            menu :"",
             indiceContatti:0,
             contacts: [
                 {
@@ -194,18 +205,20 @@ createApp({
                     const  automaticMessage = {
                           
                         date:'10/01/2020 15:51:00',                 
-                        message:'ok',
+                        message: this.frasi[this.numeroRandom(this.frasi)],
                         status: 'received'
                     }
                     this.contacts[this.indiceContatti].messages.push(automaticMessage)
+                    console.log(automaticMessage.message);
                 }, 1000);  
         },
         cancellaMessaggio(indice){
             this.contacts[this.indiceContatti].messages.splice(indice, 1)
             
         },
-        showMenu(){
-            this.dropMenu = 'show'
+        showMenu(indice){
+            this.dropMenu = indice;
+            this.menu = 'show'
             
         },
         ricercaUtente(){
@@ -214,11 +227,17 @@ createApp({
                     element.visible = false;
                 }
             });
-        }        
+        },
+        numeroRandom(array){
+            return Math.round(Math.random()*(array.length - 1));
+        },    
+
     }
+
+}) .mount("#app")     
    
         
-}) .mount("#app")      
+   
 
  
     
