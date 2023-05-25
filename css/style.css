@@ -91,6 +91,10 @@ a{
     color:gray;
 
 }
+/* dettagli sezione ricerca contatti */
+.fa-magnifying-glass{
+    color: #aeafb3;
+}
 .search-chat{
     height: 40px;
     background-color:#eaeaea;
@@ -189,7 +193,7 @@ a{
 }
 
 /* sezione dropdown menu */
- button{
+.btnDropmenu{
     display: none;
     position: absolute;
     top: 40px;
@@ -203,5 +207,7 @@ option{
 .show {
     display:block;
 }
-
+.utenti{
+    display: none;
+}
 

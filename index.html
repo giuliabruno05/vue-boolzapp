@@ -44,14 +44,14 @@
             <div class="search-chat">
                 
                 <div class="search-bar">
-                    <button class="cerca"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    <input class="search" type="text" placeholder="Cerca o inizia una nuova chat" >
+                    <button class="cerca"  @click="ricercaUtente"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input class="search" type="text" v-model="ricercaUtenti" placeholder="Cerca o inizia una nuova chat" @keyup.enter="ricercaUtente" >
                 </div>
             </div>
             <!-- struttura chat -->
             <div class="list-chat">
-                <div class="rubrica"v-for="(chat, index) in contacts" @click="swipeChat(index)">
-                    <div class="block-utente">
+                <div class="rubrica" v-for="(chat, index) in contacts" @click="swipeChat(index)">
+                    <div class="block-utente" :class="chat.visible === false ? 'utenti' : ''">
                         
                             <img :src="chat.avatar" class="avatar"  alt="" >
                         
@@ -89,7 +89,7 @@
                
                 <div class="sms"  v-for="(messaggi, index) in contacts[indiceContatti].messages" :class="messaggi.status === 'sent' ? 'green' : 'white'" @click="showMenu(index)" >
                     {{messaggi.message}}
-                    <button name="" id="" :class='dropMenu'>
+                    <button class="btnDropmenu" name="" id="" :class='dropMenu'>
                         
                         <option value="">Message info</option>
                         <option value=""@click="cancellaMessaggio(index)" >Delete message</option>

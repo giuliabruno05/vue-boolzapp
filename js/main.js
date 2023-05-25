@@ -2,6 +2,7 @@ const {createApp} = Vue ;
 createApp({
     data(){
         return{
+            ricercaUtenti:"",
             dropMenu: "",
             indiceContatti:0,
             contacts: [
@@ -13,7 +14,8 @@ createApp({
                         {
                             date: '10/01/2020 15:30:55',
                             message: 'Hai portato a spasso il cane?',
-                            status: 'sent'
+                            status: 'sent',
+                            
                         },
                         {
                             date: '10/01/2020 15:50:00',
@@ -163,6 +165,7 @@ createApp({
                             date: '10/01/2020 15:51:00',
                             message: 'OK!!',
                             status: 'received'
+
                         }
                     ],
                 }
@@ -201,14 +204,22 @@ createApp({
             this.contacts[this.indiceContatti].messages.splice(indice, 1)
             
         },
-        showMenu(indice){
-            this.dropMenu = "show"
-            // this.dropMenu = indice;
+        showMenu(){
+            this.dropMenu = 'show'
+            
+        },
+        ricercaUtente(){
+            this.contacts.forEach(element => {
+                if (!element.name.includes(this.ricercaUtenti)) {
+                    element.visible = false;
+                }
+            });
         }        
     }
    
         
 }) .mount("#app")      
+
  
     
 
