@@ -87,13 +87,13 @@
             </div>
             <div class="container-message">
                
-                <div class="sms"  v-for="(messaggi, index) in contacts[indiceContatti].messages" :class="messaggi.status === 'sent' ? 'green' : 'white'" >
+                <div class="sms"  v-for="(messaggi, index) in contacts[indiceContatti].messages" :class="messaggi.status === 'sent' ? 'green' : 'white'" @click="showMenu(index)" >
                     {{messaggi.message}}
-                    <select name="" id="">
+                    <button name="" id="" :class='dropMenu'>
                         
-                        <option value="">info message</option>
-                        <option value=""@click="cancellaMessaggio(index)" >delete message</option>
-                    </select> 
+                        <option value="">Message info</option>
+                        <option value=""@click="cancellaMessaggio(index)" >Delete message</option>
+                    </button> 
                    
                 </div>  
                

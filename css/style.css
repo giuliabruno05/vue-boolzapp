@@ -175,6 +175,8 @@ a{
     min-width: 40px;
     min-height: 30px;
     margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
     
 }
 .green{
@@ -187,10 +189,19 @@ a{
 }
 
 /* sezione dropdown menu */
-/* select{
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0s ease 1s; 
-} */
+ button{
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 20px;
+} 
+option{
+    background-color: #fff;
+    padding: 10px;
+    border:none;
+}
+.show {
+    display:block;
+}
 
 

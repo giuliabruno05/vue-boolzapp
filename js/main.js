@@ -2,7 +2,7 @@ const {createApp} = Vue ;
 createApp({
     data(){
         return{
-            
+            dropMenu: "",
             indiceContatti:0,
             contacts: [
                 {
@@ -200,12 +200,15 @@ createApp({
         cancellaMessaggio(indice){
             this.contacts[this.indiceContatti].messages.splice(indice, 1)
             
-        }
-        
+        },
+        showMenu(indice){
+            this.dropMenu = "show"
+            // this.dropMenu = indice;
+        }        
     }
    
         
 }) .mount("#app")      
-        
+ 
     
 
