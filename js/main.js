@@ -15,6 +15,8 @@ createApp({
             ricercaUtenti:"",
             dropMenu: "",
             menu :"",
+            dropMenuChat:"",
+            changeInNone:"",
             indiceContatti:0,
             contacts: [
                 {
@@ -210,8 +212,11 @@ createApp({
                         this.contacts[this.indiceContatti].messages.push(automaticMessage)
                         
                     }, 1000); 
+
                 } 
             this.textMessage="";
+            this.menu =''
+            this.changeInNone=''
             
             
                
@@ -222,7 +227,7 @@ createApp({
         },
         showMenu(indice){
             this.dropMenu = indice;
-            this.menu = 'show'
+            this.menu = 'dBlock'
             
         },
         ricercaUtente(){
@@ -235,7 +240,31 @@ createApp({
         numeroRandom(array){
             return Math.round(Math.random()*(array.length - 1));
         },    
-        
+        changeInvio(){
+            if (this.textMessage !== "") {
+                this.menu ='dBlock'
+                this.changeInNone ='changeDisplayInNone'
+                
+            }else{
+                this.menu =''
+                this.changeInNone=''
+                
+            }
+        },
+        mostraMenu(){
+            this.dropMenuChat = 'dBlock'
+            
+        },
+        cancellaMessaggi(){
+            this.contacts[this.indiceContatti].messages=[]
+            this.dropMenuChat = ""
+
+        },
+        cancellaChat(){
+            this.contacts[this.indiceContatti].visible = false;
+            this.dropMenuChat = ""
+            this.indiceContatti++
+        }
     }
 
 }) .mount("#app")     

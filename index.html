@@ -50,15 +50,15 @@
             </div>
             <!-- struttura chat -->
             <div class="list-chat">
-                <div class="rubrica" v-for="(chat, index) in contacts" @click="swipeChat(index)" :class="chat.visible === false ? 'utenti' : ''">
+                <div class="rubrica" v-for="(chat, index) in contacts" @click="swipeChat(index)" :class="chat.visible === false ? 'changeDisplayInNone' : ''">
                     <div class="block-utente" >
                         
                             <img :src="chat.avatar" class="avatar"  alt="" >
                         
                         <div class="details-avatar">
                             <span class="nomi-utente">{{chat.name}}</span><br>
-                            <span class="ultimo-accesso">{{chat.messages[chat.messages.length -1].message}}</span>
-                            <span class="orario">{{chat.messages[chat.messages.length -1].date}}</span>
+                            <span v-if="chat.messages[chat.messages.length -1]" class="ultimo-accesso">{{chat.messages[chat.messages.length -1].message}}</span>
+                            <span v-if="chat.messages[chat.messages.length -1]" class="orario">{{chat.messages[chat.messages.length -1].date}}</span>
                         </div>
                         
                     </div>
@@ -76,16 +76,21 @@
                     <div class="details-avatar">
                         <span class="nomi-utente">{{contacts[indiceContatti].name}}</span><br>
                        
-                        <span class="ultimo-accesso">Ultimo accesso oggi alle 12:00</span>
+                        <span class="ultimo-accesso">Ultimo accesso alle {{this.ora}}</span>
                     </div>
                 </div>
                 <div class="icons">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <i class="fa-solid fa-paperclip"></i>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                    
+                    <span><i class="fa-solid fa-ellipsis-vertical"@click="mostraMenu"></i></span>
+                    <button class=" btnDropmenu btnDropmenuChat":class="dropMenuChat">
+                        
+                        <div class="dropmenuChat" @click="cancellaMessaggi">Elimina messaggi</div>
+                        <div class="dropmenuChat" @click="cancellaChat">Elimina chat</div>
+                    </button> 
                 </div>
             </div>
+            <!-- sezine dropmenu -->
             <div class="container-message">
                
                 <div class="sms"  v-for="(messaggi, index) in contacts[indiceContatti].messages" :class="messaggi.status === 'sent' ? 'green' : 'white'" @click="showMenu(index)" >
@@ -93,23 +98,25 @@
                     <button class="btnDropmenu" name="" id="" :class='menu' v-if="dropMenu
                     === index ">
                         
-                        <option value="">Message info</option>
-                        <option value=""@click="cancellaMessaggio(index)" >Delete message</option>
+                        <div class="dropdownMenu">Message info</div>
+                        <div class="dropdownMenu" @click="cancellaMessaggio(index)" >Delete message</div>
                     </button> 
-                   
+                    <span class="ora">{{this.ora}}</span>
                 </div>  
                
                        
                    
                 
             </div>
+            <!-- sezione input per inserire messaggio -->
             <div class="row-bottom">
                 <a href="">
                     <i class="fa-regular fa-face-smile"></i>
                 </a>
-                <input class="write-message" type="text" placeholder="Scrivi un messaggio"v-model="textMessage" @keyup.enter="addMessage" >
+                <input class="write-message" type="text" placeholder="Scrivi un messaggio" v-model="textMessage" @keyup.enter="addMessage" @input="changeInvio">
+                <a href=""><i class="fa-regular fa-paper-plane changeDisplayInNone" @click="addMessage" :class="menu"></i></a>
                 <a href="">
-                    <i class="fa-solid fa-microphone"></i>
+                    <i class="fa-solid fa-microphone" :class="changeInNone"></i>
                 </a>
             </div>
         </div>

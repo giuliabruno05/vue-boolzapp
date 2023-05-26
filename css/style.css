@@ -128,7 +128,7 @@ a{
 }
 /* dettagli struttura contatti chat */
 .rubrica{
-    height: 50px;
+    min-height: 55px;
     background-color:#fff;
     display: flex;
     border-bottom: 1px solid #eaeaea;
@@ -187,40 +187,81 @@ a{
 .sms{
     padding: 10px;
     border-radius: 8px;
-    min-width: 40px;
-    min-height: 30px;
+    min-width: 100px;
+   
     margin-bottom: 10px;
     position: relative;
     display: inline-block;
+    max-width: 40%;
     
 }
 .green{
     background-color: #d5f9ba;
     align-self:flex-end;
+    right: 20px;
 }
 .white{
     background-color: #fff;
     align-self:flex-start;
+    left: 20px;
+    
 }
 
 /* sezione dropdown menu */
 .btnDropmenu{
     display: none;
     position: absolute;
-    top: 40px;
-    left: 20px;
+    bottom: -70px;
     border: hidden;
     z-index: 1000;
 } 
-option{
+.dropdownMenu{
     background-color: #fff;
     padding: 10px;
     
 }
-.show {
+.dBlock{
     display:block;
 }
-.utenti{
+.changeDisplayInNone{
     display: none;
 }
-
+.fa-paper-plane{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color:#8ad3f1;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    vertical-align: middle;
+    rotate: 50deg;
+    
+}
+.ora{
+    font-size: 0.7rem;
+    color:#aeafb3;
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    padding: 5px;
+}
+/* dettagli dropmenu chat*/
+.icons{
+    position: relative;
+}
+.fa-ellipsis-vertical{
+    padding: 5px;
+    
+}
+.btnDropmenuChat{
+    background-color: #fff;
+    position: absolute;
+    top: 40px;
+    right:-100px;
+    z-index: 1000;
+    
+}
+.dropmenuChat{
+    padding: 5px;
+}
